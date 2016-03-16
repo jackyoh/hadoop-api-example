@@ -1,0 +1,24 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+
+eclipse {
+  jdt {
+     sourceCompatibility = 1.7
+     targetCompatibility = 1.7
+  }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "http://central.maven.org/maven2"
+    }
+}
+
+dependencies {
+    compile 'org.apache.hadoop:hadoop-common:2.7.0'
+    compile 'org.apache.hadoop:hadoop-hdfs:2.7.0'
+    compile 'org.apache.hadoop:hadoop-mapreduce-client-common:2.7.0'
+
+}
