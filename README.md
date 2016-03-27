@@ -1,8 +1,6 @@
 # hadoop-api-example
 hadoop api practice example
 
-Install gradle
-
 Download Source Code
 <pre>
 [user@host ~]$git clone https://github.com/jackyoh/hadoop-api-example.git
