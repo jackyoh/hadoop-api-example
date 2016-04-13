@@ -20,8 +20,11 @@ public class WordCountTest {
 		MapDriver<LongWritable, Text, Text, IntWritable> mapDriver = MapDriver.newMapDriver(tokenMapper);
 		
 		mapDriver.withInput(new LongWritable(), new Text("aaaa,bbbb"));
+		mapDriver.withInput(new LongWritable(), new Text("cccc,dddd"));
 		mapDriver.withOutput(new Text("aaaa"), new IntWritable(1));
 		mapDriver.withOutput(new Text("bbbb"), new IntWritable(1));
+		mapDriver.withOutput(new Text("cccc"), new IntWritable(1));
+		mapDriver.withOutput(new Text("dddd"), new IntWritable(1));
 		mapDriver.runTest();
 	}
 	
@@ -46,7 +49,7 @@ public class WordCountTest {
 		MapReduceDriver<LongWritable, Text, Text, IntWritable, Text, IntWritable> mapReduceDriver 
 		                                            = MapReduceDriver.newMapReduceDriver(tokenMapper, intSumReducer);
 		
-		mapReduceDriver.withInput(new LongWritable(), new Text("aaaa,bbbb,cccc,aaaa,dddd"));  
+		mapReduceDriver.withInput(new LongWritable(), new Text("aaaa,bbbb,cccc,aaaa,dddd"));
 	    mapReduceDriver.withOutput(new Text("aaaa"), new IntWritable(2));
 	    mapReduceDriver.withOutput(new Text("bbbb"), new IntWritable(1));
 	    mapReduceDriver.withOutput(new Text("cccc"), new IntWritable(1));

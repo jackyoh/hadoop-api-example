@@ -23,5 +23,7 @@ dependencies {
     compile 'org.apache.hadoop:hadoop-common:2.7.0'
     compile 'org.apache.hadoop:hadoop-hdfs:2.7.0'
     compile 'org.apache.hadoop:hadoop-mapreduce-client-common:2.7.0'
+    compile 'org.mockito:mockito-all:1.8.4'
+    compile 'junit:junit:4.12'
     compile files('lib/mrunit-1.0.0-hadoop2.jar')
 }
