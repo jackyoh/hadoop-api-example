@@ -38,6 +38,7 @@ public class FolderAndFileCount {
 		protected void setup(Context context){
 			maps.put("-", "file");
 			maps.put("d", "folder");
+			maps.put("l", "link");
 		}
 		
 		@Override
@@ -47,7 +48,7 @@ public class FolderAndFileCount {
 			for(IntWritable value : values){
 				count = count + value.get();
 			}
-			context.write(new Text(maps.get(key)), new IntWritable(count));
+			context.write(new Text(maps.get(key.toString())), new IntWritable(count));
 		}
 	}
 	
