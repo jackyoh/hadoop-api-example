@@ -11,7 +11,7 @@ public class HDFSCopyFileTest {
 
 	public static void main(String args[]) throws Exception{
 		Configuration config = new Configuration();
-		config.set("fs.default.name", "hdfs://docker-server-a1:9000");
+		config.set("fs.default.name", "hdfs://yddev-node1:8020");
 		
 		FileSystem fs = FileSystem.get(config);
 		
