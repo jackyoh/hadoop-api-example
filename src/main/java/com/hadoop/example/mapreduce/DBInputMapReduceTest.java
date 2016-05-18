@@ -31,8 +31,7 @@ public class DBInputMapReduceTest extends Configured implements Tool{
 		@Override
 		public void map(LongWritable key, Employees value, Context context) 
                       					throws IOException, InterruptedException{
-	
-			context.write(new Text(value.first_name), new IntWritable(1));
+			//TODO
 		}
 	}
 
@@ -42,11 +41,8 @@ public class DBInputMapReduceTest extends Configured implements Tool{
 		@Override
 		public void reduce(Text key, Iterable<IntWritable> values, Context context) 
                  							throws IOException, InterruptedException{
-			int count = 0;
-			for(IntWritable value : values){
-				count = count + value.get();
-			}
-			context.write(key, new IntWritable(count));
+			//TODO
+			
 		}
 
 	}
@@ -59,7 +55,7 @@ public class DBInputMapReduceTest extends Configured implements Tool{
 	public int run(String[] args) throws Exception {
 		Configuration conf = getConf();
 		conf.set("mapreduce.jdbc.driver.class", "com.mysql.jdbc.Driver");
-		conf.set("mapreduce.jdbc.url", "jdbc:mysql://192.168.1.215:3306/dbtest");
+		conf.set("mapreduce.jdbc.url", "jdbc:mysql://192.168.1.170:3306/dbtest");
 		conf.set("mapreduce.jdbc.username", "root");
 		conf.set("mapreduce.jdbc.password", "123456");
 		
